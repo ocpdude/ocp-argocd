@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/redcloud/service-operator/ocs/base
+    path: openshift-cluster/redcloud/service-operators/ocs/base
     repoURL: https://github.com/ocpdude/ocp-argocd.git
     targetRevision: main
   syncPolicy:
