@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: openshift-gitops
+  namespace: openshift-gitops
+spec:
+  rbac:
+    defaultPolicy: "role:admin"
+  server:
+    insecure: true
+    route:
+      enabled: true
+  dex:
+    openShiftOAuth: true
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+resourceCustomizations: |
+  route.openshift.io/Route:
+    ignoreDifferences: |
+      jsonPointers:
+      - /spec/host
+  apps/Deployment:
+    ignoreDifferences: |
+      jsonPointers:
+      - /spec/template/spec/containers/0/image
+  apps.openshift.io/DeploymentConfig:
+    ignoreDifferences: |
+      jsonPointers:
+      - /spec/template/spec/containers/0/image
