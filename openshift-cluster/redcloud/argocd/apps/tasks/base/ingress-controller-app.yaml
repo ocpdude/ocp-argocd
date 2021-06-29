@@ -13,8 +13,8 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: clusters/redcloud/ingress-controller/base
-    repoURL: https://github.com/ocpdude/ocp-gitops.git
+    path: openshift-cluster/redcloud/ingress-controller/base
+    repoURL: https://github.com/ocpdude/ocp-argocd.git
     targetRevision: main
   syncPolicy:
     automated:

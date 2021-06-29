@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api-server
+  name: machine-config-pools
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: cluster-config
@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/redcloud/apiserver/base
+    path: openshift-cluster/redcloud/machine-config-pools/base
     repoURL: https://github.com/ocpdude/ocp-argocd.git
     targetRevision: main
   syncPolicy:
