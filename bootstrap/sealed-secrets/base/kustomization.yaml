@@ -12,6 +12,7 @@ secretGenerator:
     files:
       - tls.crt=tls.crt
       - tls.key=tls.key
+
 patches:
   - patch: |-
       apiVersion: v1
