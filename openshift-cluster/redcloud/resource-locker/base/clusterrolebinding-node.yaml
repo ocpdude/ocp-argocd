@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: resource-locker-node-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: resource-locker-node-role
+subjects:
+- kind: ServiceAccount
+  name: resource-locker-node-sa
+  namespace: resource-locker-config

@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: resource-locker-proxy-role
+  namespace: resource-locker-config
+rules:
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - proxies
+  verbs:
+  - list
+  - get
+  - watch
+  - create
+  - update
+  - patch
