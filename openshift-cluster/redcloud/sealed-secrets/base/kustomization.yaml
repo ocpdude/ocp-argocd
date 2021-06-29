@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  # - sealed-secrets-operator/base # Moved to bootstrap
+  - sealed-secrets-controller-sap-clusterrole.yaml
+  - sealed-secrets-controller-sap-rolebinding.yaml
+  - sealed-secrets-controller-rolebinding.yaml
+  - sealed-secrets-controller-clusterrolebinding.yaml
+  - sealed-secrets-controller-serviceaccount.yaml
+  - sealed-secrets-crd.yaml
+  - sealed-secrets-service-proxier-rolebinding.yaml
+  - sealed-secrets-service-proxier-role.yaml
+  - sealed-secrets-key-admin-role.yaml
+  - secrets-unsealer-clusterrole.yaml
+  - sealed-secrets-controller-deployment.yaml
+  - sealed-secrets-controller-service.yaml
