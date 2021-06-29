@@ -23,6 +23,6 @@ spec:
             storage: 2Ti
         storageClassName: thin
         volumeMode: Block
-    name: ocs-deviceset-thin
+    name: thin
     portable: true
     replica: 3
