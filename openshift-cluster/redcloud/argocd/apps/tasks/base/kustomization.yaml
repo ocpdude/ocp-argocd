@@ -10,5 +10,5 @@ resources:
   - api-server-app.yaml
   - ingress-controller-app.yaml
   - proxy-app.yaml
-    # - registry-app.yaml
+  - registry-app.yaml
     # - cnv-app.yaml

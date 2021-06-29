@@ -1,0 +1,23 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: registry-patch
+  namespace: resource-locker-config
+spec:
+  serviceAccountRef:
+    name: resource-locker-registry-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: imageregistry.operator.openshift.io/v1
+      kind: Config
+      name: cluster
+    patchTemplate: |
+      spec:
+        managementState: Managed
+        defaultRoute: true
+        replicas: 3
+        storage:
+          pvc:
+            claim: registry-shared-storage
+    patchType: application/merge-patch+json
+    id: registry-patch
