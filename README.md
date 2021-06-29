@@ -1,0 +1,1 @@
+kubectl apply -k bootstrap/openshift-gitops-operator/base
