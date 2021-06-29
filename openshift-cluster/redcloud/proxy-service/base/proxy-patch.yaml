@@ -3,9 +3,6 @@ kind: ResourceLocker
 metadata:
   name: proxy-patch
   namespace: resource-locker-config  
-  annotations:
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-    argocd.argoproj.io/sync-wave: "2"
 spec:
   serviceAccountRef:
     name: resource-locker-proxy-sa
