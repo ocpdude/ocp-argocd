@@ -6,7 +6,7 @@ resources:
   - resource-locker-app.yaml
   - machine-config-pools-app.yaml
   - node-labels-app.yaml
-  # - ocs-app.yaml
+  - ocs-app.yaml
   - api-server-app.yaml
   - ingress-controller-app.yaml
   - proxy-app.yaml
