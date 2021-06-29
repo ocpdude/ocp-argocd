@@ -1,0 +1,22 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: proxy-patch
+  namespace: resource-locker-config  
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  serviceAccountRef:
+    name: resource-locker-proxy-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: config.openshift.io/v1
+      kind: Proxy
+      name: cluster
+    patchTemplate: |
+      spec:
+        trustedCA:
+          name: redcloud-ca
+    patchType: application/merge-patch+json
+    id: proxy-patch

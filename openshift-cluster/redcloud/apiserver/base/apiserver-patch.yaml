@@ -1,0 +1,26 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: apiserver-patch
+  namespace: resource-locker-config
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  serviceAccountRef:
+    name: resource-locker-apiserver-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: config.openshift.io/v1
+      kind: APIServer
+      name: cluster
+    patchTemplate: |
+      spec:
+        servingCerts:
+          namedCertificates:
+          - names:
+            - api.openshift.redcloud.land
+            servingCertificate:
+              name: api-cert
+    patchType: application/merge-patch+json
+    id: apiserver-patch
