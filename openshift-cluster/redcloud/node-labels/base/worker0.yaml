@@ -1,0 +1,25 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: worker0-patch
+  namespace: resource-locker-config
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  serviceAccountRef:
+    name: resource-locker-node-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: v1
+      kind: Node
+      name: worker0.redcloud.land
+    patchTemplate: |
+      metadata:
+        labels:
+          node-role.kubernetes.io/worker: ""
+          node-role.kubernetes.io/ocs: ""
+          node-role.kubernetes.io/cnv: ""
+          cluster.ocs.openshift.io/openshift-storage: ""
+    patchType: application/strategic-merge-patch+json
+    id: worker0-node-labels

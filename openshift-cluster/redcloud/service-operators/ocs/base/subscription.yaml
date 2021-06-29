@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-storage-subscription
+  namespace: openshift-storage
+spec:
+  channel: stable-4.7
+  name: ocs-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
