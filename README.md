@@ -1,6 +1,6 @@
 ## OpenShift GitOps (ArgoCD)
 
-Since I am sharing my configution publickly, I will be using sealed-secrets to encrypt certificates and passwords. In your lab environent you can just use your certs/passwords as normal - or I'd encourage you to experiment with sealed-secrets which is open-source/community supported.
+Since I am sharing my configution publicly, I will be using sealed-secrets to encrypt certificates and passwords. In your lab environent you can just use your certs/passwords as normal - or I'd encourage you to experiment with sealed-secrets which is open-source/community supported.
 
 ---
 ### Install Argo & Sealed Secrets
