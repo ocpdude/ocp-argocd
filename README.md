@@ -29,5 +29,7 @@ What's installed?
 2. The cluster-proxy is configured with the redcloud.land ca
 3. The ingress-controller is configured with a redclou.land wildcard certificate
 4. The "resource-locker" operator is installed can configured with the service-accounts for the above certificates and the internal registry.
-5. OpenShift Container Storage (4.7) operator and subscription (defaults) are installed and configured.
-6. The internal registry is patched to use OCS replica storage.
+5. Setup the required node-labels.
+6. Configure Chrony using the default MachineConfigs
+7. OpenShift Container Storage (4.7) operator and subscription (defaults) are installed and configured.
+8. The internal registry is patched to use OCS replica storage.
