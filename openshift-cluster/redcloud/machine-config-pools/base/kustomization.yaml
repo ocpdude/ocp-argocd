@@ -5,4 +5,4 @@ resources:
   - ../cnv/base
   - ../ocs/base
   - ../chrony/base
-  #- ../../../../machine-config-pools/entitlements/base
+  #- ../entitlements/base

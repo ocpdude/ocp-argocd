@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-image-registry
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   accessModes:
   - ReadWriteMany

@@ -2,7 +2,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: ResourceLocker
 metadata:
   name: proxy-patch
-  namespace: resource-locker-config  
+  namespace: resource-locker-config
 spec:
   serviceAccountRef:
     name: resource-locker-proxy-sa
