@@ -5,14 +5,15 @@ Since I am sharing my configution publicly, I will be using sealed-secrets to en
 ---
 ### Install Argo & Sealed Secrets
 After installing the cluster, we'll need to install ArgoCD and the Sealed Secrets Operator(optional). \
-`kubectl apply -k https://github.com/ocpdude/ocp-argocd/tree/main/bootstrap/sealed-secrets-operator/base`
 
-Now configure OpenShift GitOps. \
-`kubectl apply -k https://github.com/ocpdude/ocp-argocd/tree/main/bootstrap/openshift-gitops/base`
+Apply the OpenShift GitOps Operator: \
+`kubectl apply -k bootstrap/openshift-gitops/openshift-gitops-operator/base`
 
-To ensure security, I'm running the sealed-secrets-operatator from the command line. \
+Configure OpenShift GitOps. \
+`kubectl apply -k bootstrap/openshift-gitops`
+
+For security, I'm running the sealed-secrets-operatator from the command line. \
 `kustomize build bootstrap/sealed-secrets/sealed-secrets-operator/base | kubectl apply -f -`
-##### Note: Use "kustomize" instead of "kubectl -k" to prevent patching errors.
 
 ---
 ### Setup & Install
