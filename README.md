@@ -10,10 +10,10 @@ Apply the OpenShift GitOps Operator: \
 `kubectl apply -k bootstrap/openshift-gitops/openshift-gitops-operator/base`
 
 Configure OpenShift GitOps. \
-`kubectl apply -k bootstrap/openshift-gitops`
+`kubectl apply -k bootstrap/openshift-gitops/base`
 
 For security, I'm running the sealed-secrets-operatator from the command line. \
-`kustomize build bootstrap/sealed-secrets/sealed-secrets-operator/base | kubectl apply -f -`
+`kustomize build bootstrap/sealed-secrets-operator/base | kubectl apply -f -`
 
 ---
 ### Setup & Install
@@ -23,7 +23,7 @@ openshift-cluster > cluster-name > argocd > tasks (initiates the apps for automa
 openshift-cluster > cluster-name > app-source > (installs the app and supporting configuration data) \
 
 Kickoff the install and let the magic happen. \
-`kubectl apply -k https://github.com/ocpdude/ocp-argocd/tree/main/openshift-cluster/redcloud/argocd/apps/manifests/base`
+`kubectl apply -k openshift-cluster/redcloud/argocd/apps/manifests/base`
 
 What's installed?
 1. The api-server is configured with a redcloud.land certificate
