@@ -2,9 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ingress-controller
-  annotations:
-    argocd.argoproj.io/sync-wave: "2"
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     gitops.ownedBy: cluster-config
 spec:
