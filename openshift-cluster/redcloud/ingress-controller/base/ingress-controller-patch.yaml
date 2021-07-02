@@ -3,6 +3,9 @@ kind: ResourceLocker
 metadata:
   name: ingress-controller-patch
   namespace: resource-locker-config
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   serviceAccountRef:
     name: resource-locker-ingress-sa
