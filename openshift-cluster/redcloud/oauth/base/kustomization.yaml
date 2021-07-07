@@ -7,4 +7,4 @@ resources:
   - oauth-htpasswd-secret-sealed.yaml
   - oauth-bindpassword-secret-sealed.yaml
   - oauth-ldap-ca-config-map.yaml
-  - oauth-ldap-sync.yaml
+  # - oauth-ldap-sync.yaml
