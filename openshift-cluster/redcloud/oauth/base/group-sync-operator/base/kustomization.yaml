@@ -6,9 +6,4 @@ resources:
   - subscription.yaml
   - group-sync-secret-sealed.yaml
   - ldap-group-sync.yaml
-
-secretGenerator:
-  - name: redcloud-idm-ca
-    namespace: ldap-group-sync
-    files:
-    - ca.crt=./idm.crt
+  - redcloud-idm-ca-secret-sealed.yaml
