@@ -24,7 +24,7 @@ spec:
         groupsQuery:
           baseDN: "cn=groups,cn=accounts,dc=redcloud,dc=land"
           derefAliases: never
-          filter: (& (cn={0}) (| (objectclass=groupOfNames) (objectclass=groupOfUniqueNames) (objectclass=posixGroup)))
+          filter: (objectClass=groupofnames)
           scope: sub
         tolerateMemberNotFoundErrors: true
         tolerateMemberOutOfScopeErrors: true
