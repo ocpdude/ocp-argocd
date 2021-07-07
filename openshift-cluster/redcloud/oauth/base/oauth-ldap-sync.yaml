@@ -1,27 +1,38 @@
-kind: LDAPSyncConfig
-apiVersion: v1
-url: "ldaps://idm.redcloud.land:636"
-bindDN: "uid=waddawaddabingbang,cn=users,cn=accounts,dc=redcloud,dc=land"
-bindPassword:
-  name: ldap-secret
-ca:
-  name: oauth-ldap-ca-config-map
-insecure: false
-rfc2307:
-  groupsQuery:
-    baseDN: "cn=groups,cn=accounts,dc=redcloud,dc=land"
-    scope: sub
-    derefAliases: never
-    filter: (objectClass=groupofnames)
-    pageSize: 0
-    timeout: 0
-  groupUIDAttribute: dn
-  groupNameAttributes: [ cn ]
-  groupMembershipAttributes: [ member ]
-  usersQuery:
-    baseDN: "cn=users,cn=accounts,dc=redcloud,dc=land"
-    scope: sub
-    derefAliases: never
-    pageSize: 0
-  userUIDAttribute: dn
-  userNameAttributes: [ uid ]
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: GroupSync
+metadata:
+  name: ldap-groupsync
+spec:
+  providers:
+  - ldap:
+      whitelist:
+      - cn=ocp-admins,cn=groups,cn=accounts,dc=redcloud,dc=land
+      - cn=ocp-users,cn=groups,cn=accounts,dc=redcloud,dc=land
+      - cn=ocp-developers,cn=groups,cn=accounts,dc=redcloud,dc=land
+      - cn=ocp-production,cn=groups,cn=accounts,dc=redcloud,dc=land
+      credentialsSecret:
+        name: bind-group-sync
+        namespace: group-sync-operator
+      insecure: false
+      rfc2307:
+        groupMembershipAttributes:
+        - member
+        groupNameAttributes:
+        - cn
+        groupUIDAttribute: dn
+        groupsQuery:
+          baseDN: "cn=groups,cn=accounts,dc=redcloud,dc=land"
+          derefAliases: never
+          filter: (objectClass=groupofnames)
+          scope: sub
+        tolerateMemberNotFoundErrors: true
+        tolerateMemberOutOfScopeErrors: true
+        userNameAttributes:
+        - cn
+        userUIDAttribute: dn
+        usersQuery:
+          baseDN: "cn=users,cn=accounts,dc=redcloud,dc=land"
+          derefAliases: never
+          scope: sub
+      url: "ldaps://idm.redcloud.land:636"
+    name: redcloud-idm
