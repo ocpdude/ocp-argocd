@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: group-sync-operator-subscription
+  namespace: group-sync-operator
+spec:
+  channel: alpha
+  name: group-sync-operator
+  source: community-operators
+  sourceNamespace: openshift-marketplace
