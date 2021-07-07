@@ -6,9 +6,9 @@ metadata:
     openshift.io/cluster-monitoring: "true"
 spec: {}
 
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: ldap-group-sync
-spec: {}
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: ldap-group-sync
+# spec: {}
