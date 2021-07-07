@@ -19,7 +19,7 @@ spec:
         labels:
           node-role.kubernetes.io/worker: ""
           node-role.kubernetes.io/ocs: ""
-          node-role.kubernetes.io/cnv: ""
+          # node-role.kubernetes.io/cnv: ""
           cluster.ocs.openshift.io/openshift-storage: ""
     patchType: application/strategic-merge-patch+json
     id: worker0-node-labels
