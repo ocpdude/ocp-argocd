@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - namespaces.yaml
   - subscription.yaml
-  - group-sync-secret-sealed.yaml
+  - ldap-bind-secret-sealed.yaml
   - ldap-group-sync.yaml
   - redcloud-idm-ca-secret-sealed.yaml
