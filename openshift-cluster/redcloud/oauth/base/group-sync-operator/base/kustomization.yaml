@@ -12,4 +12,3 @@ secretGenerator:
     namespace: ldap-group-sync
     files:
     - ca.crt=./idm.crt
-    type: "kubernetes.io/tls"
