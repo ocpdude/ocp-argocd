@@ -12,3 +12,4 @@ resources:
   - ocs-app.yaml
   - registry-app.yaml
   - cnv-app.yaml
+  - oauth-app.yaml

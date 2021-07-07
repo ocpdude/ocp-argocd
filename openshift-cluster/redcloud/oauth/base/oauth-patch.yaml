@@ -1,0 +1,44 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: ResourceLocker
+metadata:
+  name: oauth-patch
+  namespace: resource-locker-config
+spec:
+  serviceAccountRef:
+    name: resource-locker-oauth-sa
+  patches:
+  - targetObjectRef:
+      apiVersion: config.openshift.io/v1
+      kind: OAuth
+      name: cluster
+    patchTemplate: |
+      spec:
+        identityProviders:
+        - name: Local Accounts
+          mappingMethod: claim
+          type: HTPasswd
+          htpasswd:
+            fileData:
+              name: htpasswd
+        - name: RedCloud IdM
+          mappingMethod: claim
+          type: LDAP
+          ldap:
+            attributes:
+              id:
+              - dn
+              email:
+              - mail
+              name:
+              - cn
+              preferredUsername:
+              - uid
+            bindDN: "uid=waddawaddabingbang,cn=users,cn=accounts,dc=redcloud,dc=land"
+            bindPassword:
+              name: ldap-secret
+            insecure: false
+            ca:
+              name: oauth-ldap-ca-config-map
+            url: "ldaps://idm.redcloud.land:636/cn=users,cn=accounts,dc=redcloud,dc=land?uid"
+    patchType: application/merge-patch+json
+    id: oauth-patch

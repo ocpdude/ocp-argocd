@@ -1,0 +1,27 @@
+kind: LDAPSyncConfig
+apiVersion: v1
+url: "ldaps://idm.redcloud.land:636"
+bindDN: "uid=waddawaddabingbang,cn=users,cn=accounts,dc=redcloud,dc=land"
+bindPassword:
+  name: ldap-secret
+ca:
+  name: oauth-ldap-ca-config-map
+insecure: false
+rfc2307:
+  groupsQuery:
+    baseDN: "cn=groups,cn=accounts,dc=redcloud,dc=land"
+    scope: sub
+    derefAliases: never
+    filter: (objectClass=groupofnames)
+    pageSize: 0
+    timeout: 0
+  groupUIDAttribute: dn
+  groupNameAttributes: [ cn ]
+  groupMembershipAttributes: [ member ]
+  usersQuery:
+    baseDN: "cn=users,cn=accounts,dc=redcloud,dc=land"
+    scope: sub
+    derefAliases: never
+    pageSize: 0
+  userUIDAttribute: dn
+  userNameAttributes: [ uid ]

@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oauth-ldap-ca-config-map
+  namespace: openshift-config
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIEkTCCAvmgAwIBAgIBATANBgkqhkiG9w0BAQsFADA4MRYwFAYDVQQKDA1SRURD
+    TE9VRC5MQU5EMR4wHAYDVQQDDBVDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMjEw
+    MjA0MTI0OTQzWhcNNDEwMjA0MTI0OTQzWjA4MRYwFAYDVQQKDA1SRURDTE9VRC5M
+    QU5EMR4wHAYDVQQDDBVDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwggGiMA0GCSqGSIb3
+    DQEBAQUAA4IBjwAwggGKAoIBgQDBAlwBCFRrRrmfxCjKRsVnCuDjnwGukjhaCPEr
+    YU8tukhzsF/j2Fd8pmj2Qr8d2RN3UMq4BfUEBMD/LzRdQhKshMdCs3yUIF7MHuDF
+    8pcfRwqIxI/VxLbtr2oAtDfdPPTn+9ZPph9T+Z9OUmR0Axb1gFbe704ZVC2f7SsO
+    g2n6R+f0z7CI3LWDz7VFr4bF5IUZ80uXOl6rj4/PALc0saT5ZjbLEhprdzEn5iyF
+    qG3xMH0TthMRSiyZIzfUrrq1TcnjRc4HZ+bOHLT6oc73rNvzCP4HH7k/twdPCwkH
+    N1c8Gn2Fccs7zNvEWH1NWGc8YhFrjo2HYxm3TTDVZ+giruYk+XYGxlGjtGYH9ywQ
+    2y4eAolZ1DjYt3mOptlfoJRw2NOG6B7yu+yBf3utXywuz/JVBxEf4Y8Mv2PiJbvM
+    2Ob/6yr8X1eCGWNtvYjnSc+4rydwXamyUwfVrkibAq5NNL/WzXSJqTrQc7JExfiX
+    JH5ThOdYnaILDcgh/3scqzJO4pECAwEAAaOBpTCBojAfBgNVHSMEGDAWgBRq+9Hg
+    GsGWFzg6RbZIoTrhySf28jAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+    xjAdBgNVHQ4EFgQUavvR4BrBlhc4OkW2SKE64ckn9vIwPwYIKwYBBQUHAQEEMzAx
+    MC8GCCsGAQUFBzABhiNodHRwOi8vaXBhLWNhLnJlZGNsb3VkLmxhbmQvY2Evb2Nz
+    cDANBgkqhkiG9w0BAQsFAAOCAYEAFxADhjVgvgs87b/XT5y/GUz4UXKkUq0y258S
+    5ZweHrY+TQJNng3fsPgcGv/5THiQ480egB4m9prxcMKpkh3sLRjzanka0iZdsL3p
+    yaSyewRF2exc49ncCAK8wsz1LCt84/Uos39sLcyShmTT1IAt8GUBNUhvUSelUtLM
+    u+lEIiRPOpQPDhWmopp5uHG+3GuLne2Br9l+6ZAf3uN32tCpu5sbx0ao6DeTVNUO
+    yoZy8k6vppyAPPocZBTS7L6y54glTi3HyPjp385Pmd+2k6iTxBDRkgmKBG0xYmwD
+    yHV3Pk+MXv2EMtzQpQP/w6r7qQ2ZxEkY8oZFITiBmD3v9GAyN5NpkW12lwyfFAay
+    uSBlbaN19KDdKY1UScBtRbEBX9ye3F2GU2KjvN18WAewb47ffLQrabk/RVlKRPbi
+    tG6NxIUt9oGiWg8x4w7KpO/f/m6NtAAKCeprabLifuVaGk4l312ZRYMe81q+/ZlH
+    D/HlXHKIOBMQtY9egZAxS4TWquTX
+    -----END CERTIFICATE-----

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api-server
+  name: oauth-ldap
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "5"
@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: openshift-cluster/redcloud/apiserver/base
+    path: openshift-cluster/redcloud/oauth/base
     repoURL: https://github.com/ocpdude/ocp-argocd.git
     targetRevision: main
   syncPolicy:

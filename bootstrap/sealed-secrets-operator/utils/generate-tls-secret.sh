@@ -8,7 +8,7 @@ fi
 
 if [ "$#" -ne 4 ] ;
 then
-	echo -e "Usage:\n$0 <name> <namespace> <crt> <key>"
+	echo -e "Usage:\n$0 <name> <namespace> <crt> <key> > output-filename.yaml"
 	exit
 fi
 

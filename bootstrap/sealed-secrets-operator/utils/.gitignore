@@ -2,4 +2,5 @@
 *.crt
 *.yaml
 .DS_Store
+ocpadmin.htpasswd
 
