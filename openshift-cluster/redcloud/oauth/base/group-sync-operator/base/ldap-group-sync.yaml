@@ -12,6 +12,9 @@ spec:
       - cn=ocp-users,cn=groups,cn=accounts,dc=redcloud,dc=land
       - cn=ocp-developers,cn=groups,cn=accounts,dc=redcloud,dc=land
       - cn=ocp-production,cn=groups,cn=accounts,dc=redcloud,dc=land
+      caSecret:
+        name: redcloud-idm-ca
+        namespace: ldap-group-sync
       credentialsSecret:
         name: bind-group-sync
         namespace: ldap-group-sync
