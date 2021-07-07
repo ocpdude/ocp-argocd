@@ -12,7 +12,7 @@ spec:
       - cn=ocp-production,cn=groups,cn=accounts,dc=redcloud,dc=land
       credentialsSecret:
         name: bind-group-sync
-        namespace: group-sync-operator
+        namespace: ldap-group-sync
       insecure: false
       rfc2307:
         groupMembershipAttributes:
