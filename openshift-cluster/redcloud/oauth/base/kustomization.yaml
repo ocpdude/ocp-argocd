@@ -8,6 +8,3 @@ resources:
   - oauth-htpasswd-secret-sealed.yaml
   - oauth-bindpassword-secret-sealed.yaml
   - oauth-ldap-ca-config-map.yaml
-  - namespace-group-sync.yaml
-  - group-sync-secret-sealed.yaml
-  - ldap-group-sync.yaml

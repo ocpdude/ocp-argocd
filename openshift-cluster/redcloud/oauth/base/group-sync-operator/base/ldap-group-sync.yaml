@@ -3,6 +3,7 @@ kind: GroupSync
 metadata:
   name: ldap-groupsync
 spec:
+  schedule: "*/15 * * * *"
   providers:
   - ldap:
       whitelist:
@@ -23,7 +24,7 @@ spec:
         groupsQuery:
           baseDN: "cn=groups,cn=accounts,dc=redcloud,dc=land"
           derefAliases: never
-          filter: (objectClass=groupofnames)
+          filter: (objectClass=member)
           scope: sub
         tolerateMemberNotFoundErrors: true
         tolerateMemberOutOfScopeErrors: true
