@@ -2,6 +2,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: GroupSync
 metadata:
   name: ldap-groupsync
+  namespace: group-sync-operator
 spec:
   schedule: "*/15 * * * *"
   providers:
@@ -37,3 +38,4 @@ spec:
             derefAliases: never
             scope: sub
         url: "ldaps://idm.redcloud.land:636"
+        
