@@ -3,6 +3,8 @@ kind: Subscription
 metadata:
   name: group-sync-operator-subscription
   namespace: group-sync-operator
+  labels:
+    operators.coreos.com/group-sync-operator.group-sync-operator: ''
 spec:
   channel: alpha
   name: group-sync-operator
