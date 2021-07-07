@@ -19,5 +19,5 @@ resources:
   - clusterrolebinding-proxy.yaml
   - serviceaccount-proxy.yaml
   - clusterrole-oauth.yaml
-  - cluterrolebinding-oauth.yaml
+  - clusterrolebinding-oauth.yaml
   - serviceaccount-oauth.yaml
