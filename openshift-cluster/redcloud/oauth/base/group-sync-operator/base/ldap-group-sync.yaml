@@ -2,6 +2,7 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: GroupSync
 metadata:
   name: ldap-groupsync
+  namespace: ldap-group-sync
 spec:
   schedule: "*/15 * * * *"
   providers:
