@@ -12,6 +12,8 @@ Apply the OpenShift GitOps Operator: \
 Configure OpenShift GitOps. \
 `kubectl apply -k bootstrap/openshift-gitops/base`
 
+I've noticed that installing from teh community operators are a bit unreliable, so install 'sealed-secrets & group-sync' commity operators manually before continuing.
+
 For security, I'm running the sealed-secrets-operatator from the command line. \
 `kustomize build bootstrap/sealed-secrets-operator/base | kubectl apply -f -`
 
