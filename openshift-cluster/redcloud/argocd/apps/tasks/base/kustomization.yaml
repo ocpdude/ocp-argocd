@@ -11,9 +11,5 @@ resources:
   - node-labels-app.yaml
   - ocs-app.yaml
   - registry-app.yaml
-  # - cnv-app.yaml
+  - cnv-app.yaml
   - oauth-app.yaml
-
-  # Looking for CNV? I've commented it out because I'm currently not running it.
-  # if you'd like to use it, uncomment above and uncomment cnv in the 
-  # node-labels/base/worker*.yaml files.
