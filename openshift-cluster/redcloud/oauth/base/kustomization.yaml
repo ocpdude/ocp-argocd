@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  # - ../group-sync-operator/base
   - oauth-patch.yaml
   - local-admins-group.yaml
   - oauth-htpasswd-secret-sealed.yaml
@@ -13,3 +12,7 @@ resources:
   - ldap-bind-secret-sealed.yaml
   - ldap-group-sync.yaml
   - redcloud-idm-ca-secret-sealed.yaml
+
+# For my lab, I'm setting two permission levels admin & prod-sudoers, the default is 'user'.
+  - cluster-admin-users.yaml
+  - ocp-production-users.yaml
