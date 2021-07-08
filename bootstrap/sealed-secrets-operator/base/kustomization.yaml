@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - sealed-secrets-subscription.yaml
+  # - sealed-secrets-subscription.yaml
   
 secretGenerator:
   - name: sealed-secrets-custom-key
