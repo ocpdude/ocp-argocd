@@ -6,3 +6,4 @@ resources:
   - operatorgroup.yaml
   - subscription.yaml
   - pull-secret-sealed.yaml
+  - multicluster-hub.yaml
