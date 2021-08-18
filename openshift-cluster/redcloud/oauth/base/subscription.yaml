@@ -2,13 +2,17 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: group-sync-operator
-  namespace: group-sync-operator
-  labels:
-    operators.coreos.com/group-sync-operator.group-sync-operator: ''
 spec:
   channel: alpha
   installPlanApproval: Automatic
   name: group-sync-operator
   source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: group-sync-operator.v0.0.12
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: group-sync-operator
+spec:
+  targetNamespaces:
+    - group-sync-operator
