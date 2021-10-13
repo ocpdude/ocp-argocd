@@ -4,27 +4,34 @@ metadata:
   name: openshift-gitops
   namespace: openshift-gitops
 spec:
+  repo:
+    resources:
+      limits:
+        cpu: "1"
+        memory: 1024Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+  dex:
+    openShiftOAuth: true
   rbac:
     defaultPolicy: "role:admin"
   server:
     insecure: true
     route:
       enabled: true
-  dex:
-    openShiftOAuth: true
-  tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: edge
-resourceCustomizations: |
-  route.openshift.io/Route:
-    ignoreDifferences: |
-      jsonPointers:
-      - /spec/host
-  apps/Deployment:
-    ignoreDifferences: |
-      jsonPointers:
-      - /spec/template/spec/containers/0/image
-  apps.openshift.io/DeploymentConfig:
-    ignoreDifferences: |
-      jsonPointers:
-      - /spec/template/spec/containers/0/image
+      tls:
+        insecureEdgeTerminationPolicy: Redirect
+        termination: edge
+  resourceCustomizations: |
+    route.openshift.io/Route:
+      ignoreDifferences: |
+        jsonPointers:
+        - /spec/host
+    apps/Deployment:
+      ignoreDifferences: |
+        jsonPointers:
+        - /spec/template/spec/containers/0/image
+    apps.openshift.io/DeploymentConfig:
+      ignoreDifferences: |
+        jsonPointers:
