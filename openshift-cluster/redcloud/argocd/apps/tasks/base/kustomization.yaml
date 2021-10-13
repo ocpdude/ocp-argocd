@@ -8,8 +8,8 @@ resources:
   - sealed-secrets-app.yaml
   - resource-locker-app.yaml
   - machine-config-pools-app.yaml
-  - node-labels-app.yaml
-  - ocs-app.yaml
+  # - node-labels-app.yaml
+  # - ocs-app.yaml
   - registry-app.yaml
   # - cnv-app.yaml
   - oauth-app.yaml

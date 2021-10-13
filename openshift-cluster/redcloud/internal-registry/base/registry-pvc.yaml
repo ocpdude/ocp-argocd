@@ -12,4 +12,5 @@ spec:
   resources:
     requests:
       storage: 100Gi
-  storageClassName: ocs-storagecluster-cephfs
+  # storageClassName: ocs-storagecluster-cephfs # If using OpenShift Container Storage
+    storageClassName: thin
