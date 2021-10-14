@@ -13,4 +13,4 @@ resources:
   - registry-app.yaml
   # - cnv-app.yaml
   - oauth-app.yaml
-  - acm-app.yaml
+  # - acm-app.yaml
