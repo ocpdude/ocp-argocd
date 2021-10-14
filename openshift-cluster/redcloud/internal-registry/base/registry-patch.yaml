@@ -18,6 +18,6 @@ spec:
         replicas: 3
         storage:
           pvc:
-            claim: registry-shared-storage
+            claim: image-registry-storage
     patchType: application/merge-patch+json
     id: registry-patch
