@@ -5,12 +5,12 @@ resources:
   - api-server-app.yaml
   - ingress-controller-app.yaml
   - proxy-app.yaml
-  - sealed-secrets-app.yaml
+  # - sealed-secrets-app.yaml
   - resource-locker-app.yaml
   - machine-config-pools-app.yaml
   # - node-labels-app.yaml
   # - ocs-app.yaml
   - registry-app.yaml
-  # - cnv-app.yaml
+  - cnv-app.yaml
   - oauth-app.yaml
   # - acm-app.yaml
