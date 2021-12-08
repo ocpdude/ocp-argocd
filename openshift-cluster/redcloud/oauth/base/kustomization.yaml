@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - subscription.yaml # You can also install this operator manually.
+  # - subscription.yaml # You can also install this operator manually.
   - oauth-patch.yaml
   - local-admins-group.yaml
   - oauth-htpasswd-secret-sealed.yaml
