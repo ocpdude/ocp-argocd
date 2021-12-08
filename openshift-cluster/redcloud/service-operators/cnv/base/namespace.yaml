@@ -3,9 +3,9 @@ kind: Namespace
 metadata:
   name: openshift-cnv
 spec: {}
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: openshift-mtv
-spec: {}
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: openshift-mtv
+# spec: {}

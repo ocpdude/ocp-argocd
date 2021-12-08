@@ -10,5 +10,5 @@ metadata:
     deployOVS: "false"
   labels:
     app: kubevirt-hyperconverged
-spec:
-  vddkInitImage: docker.io/shaker242/vddk:6.7.3
+spec: {}
+  # vddkInitImage: docker.io/shaker242/vddk:6.7.3 # used with ocp < 4.9
