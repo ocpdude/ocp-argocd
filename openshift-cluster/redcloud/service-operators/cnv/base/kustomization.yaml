@@ -3,7 +3,8 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - operatorgroup.yaml
+  - cnv-operatorgroup.yaml
+  - mtv-operatorgroup.yaml
   - cnv-subscription.yaml
   - kubevirt-hyperconverged.yaml
   - mtv-subscription.yaml
