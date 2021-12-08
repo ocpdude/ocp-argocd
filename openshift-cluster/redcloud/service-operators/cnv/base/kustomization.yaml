@@ -6,6 +6,6 @@ resources:
   - cnv-operatorgroup.yaml
   - cnv-subscription.yaml
   - kubevirt-hyperconverged.yaml
-  - mtv-subscription.yaml
-  - mtv-operatorgroup.yaml
-  - mtv-controller.yaml
+  # - mtv-subscription.yaml
+  # - mtv-operatorgroup.yaml
+  # - mtv-controller.yaml
