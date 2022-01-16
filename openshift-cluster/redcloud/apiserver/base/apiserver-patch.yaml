@@ -19,7 +19,7 @@ spec:
         servingCerts:
           namedCertificates:
           - names:
-            - api.openshift.redcloud.land
+            - api.okd.redcloud.land
             servingCertificate:
               name: api-cert
     patchType: application/merge-patch+json
