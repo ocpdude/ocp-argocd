@@ -21,22 +21,22 @@ spec:
             - |
               export HOME=/tmp/argocd-setup
 
-              until oc -n openshift-gitops get routes argocd-cluster-server > /dev/null 2>&1; do sleep 5; done;
+              until oc -n argocd get routes argocd-cluster-server > /dev/null 2>&1; do sleep 5; done;
 
-              ARGOCD_DEX_REDIRECT_URI=https://$(oc -n openshift-gitops get routes argocd-cluster-server -o jsonpath='{ .spec.host }')/api/dex/callback
+              ARGOCD_DEX_REDIRECT_URI=https://$(oc -n argocd get routes argocd-cluster-server -o jsonpath='{ .spec.host }')/api/dex/callback
 
-              until oc -n openshift-gitops get sa argocd-cluster-argocd-dex-server > /dev/null 2>&1; do sleep 5; done;
+              until oc -n argocd get sa argocd-cluster-argocd-dex-server > /dev/null 2>&1; do sleep 5; done;
 
-              ARGOCD_DEX_SA_TOKEN=$(oc -n openshift-gitops sa get-token argocd-cluster-argocd-dex-server)
+              ARGOCD_DEX_SA_TOKEN=$(oc -n argocd sa get-token argocd-cluster-argocd-dex-server)
 
-              oc annotate -n openshift-gitops --overwrite sa argocd-cluster-argocd-dex-server serviceaccounts.openshift.io/oauth-redirecturi.argocd=${ARGOCD_DEX_REDIRECT_URI}
+              oc annotate -n argocd --overwrite sa argocd-cluster-argocd-dex-server serviceaccounts.openshift.io/oauth-redirecturi.argocd=${ARGOCD_DEX_REDIRECT_URI}
 
-              until oc -n openshift-gitops get argocd argocd-cluster  > /dev/null 2>&1; do sleep 5; done;
+              until oc -n argocd get argocd argocd-cluster  > /dev/null 2>&1; do sleep 5; done;
 
               cat <<EOF > /tmp/dex-config-template.txt
               connectors:
               - config:
-                  clientID: system:serviceaccount:openshift-gitops:argocd-cluster-argocd-dex-server
+                  clientID: system:serviceaccount:argocd:argocd-cluster-argocd-dex-server
                   clientSecret: ${ARGOCD_DEX_SA_TOKEN}
                   insecureCA: true
                   issuer: https://kubernetes.default.svc
@@ -48,11 +48,11 @@ spec:
 
               while true; do
 
-                oc get argocd -n openshift-gitops argocd-cluster -o json | jq 'del(.metadata.resourceVersion)' > /tmp/argocd-cluster.json
+                oc get argocd -n argocd argocd-cluster -o json | jq 'del(.metadata.resourceVersion)' > /tmp/argocd-cluster.json
 
                 jq --arg config "$(cat /tmp/dex-config-template.txt)" '.spec.dex.config = $config' /tmp/argocd-cluster.json > /tmp/argocd-cluster.json.updated
                 
-                oc apply -n openshift-gitops -f /tmp/argocd-cluster.json.updated
+                oc apply -n argocd -f /tmp/argocd-cluster.json.updated
 
                 if [ $? -eq 0 ]; then
                   break
