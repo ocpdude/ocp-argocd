@@ -8,7 +8,7 @@ metadata:
     run: argocd-setup
   name: argocd-setup
   generateName: argocd-setup-
-  namespace: openshift-operators
+  namespace: argocd
 spec:
   template:
     spec:

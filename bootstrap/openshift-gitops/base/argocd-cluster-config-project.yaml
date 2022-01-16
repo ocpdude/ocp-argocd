@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: cluster-config
-  namespace: openshift-gitops
+  namespace: kube-system
 spec:
   clusterResourceWhitelist:
     - group: "*"
