@@ -2,16 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - resource-locker-app.yaml
   - api-server-app.yaml
-  #- ingress-controller-app.yaml
-  #- proxy-app.yaml
+  # - ingress-controller-app.yaml
+  # - proxy-app.yaml
   # - sealed-secrets-app.yaml
-  #- resource-locker-app.yaml
-  #- machine-config-pools-app.yaml
+  # - machine-config-pools-app.yaml
   # - node-labels-app.yaml
   # - ocs-app.yaml
-  #- registry-app.yaml
+  # -  registry-app.yaml
   # - cnv-app.yaml
-  #- oauth-app.yaml
+  # - oauth-app.yaml
   # - acm-app.yaml
   
