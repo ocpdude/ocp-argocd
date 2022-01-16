@@ -1,4 +1,3 @@
-# CNV Operator
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -8,5 +7,4 @@ spec:
   source: redhat-operators
   sourceNamespace: openshift-marketplace
   name: kubevirt-hyperconverged
-  startingCSV: kubevirt-hyperconverged-operator.v4.9.0
   channel: "stable"

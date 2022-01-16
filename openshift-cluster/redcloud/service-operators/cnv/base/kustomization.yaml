@@ -2,10 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - namespace.yaml
+  - cnv-namespace.yaml
   - cnv-operatorgroup.yaml
   - cnv-subscription.yaml
   - kubevirt-hyperconverged.yaml
-  # - mtv-subscription.yaml
+  # - mtv-namespace
   # - mtv-operatorgroup.yaml
+  # - mtv-subscription.yaml
   # - mtv-controller.yaml

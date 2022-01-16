@@ -32,7 +32,7 @@ What's installed?
 4. The "resource-locker" operator is installed can configured with the service-accounts for the above certificates and the internal registry.
 5. Setup the required node-labels.
 6. Configure Chrony using the default MachineConfigs
-7. OpenShift Container Storage (4.7) operator and subscription (defaults) are installed and configured.
-8. The internal registry is patched to use OCS replica storage.
+<!-- 7. OpenShift Container Storage (4.7) operator and subscription (defaults) are installed and configured. -->
+8. The internal registry is patched.
 9. Configures OpenShift Virtualization (CNV) operator and subscription, addressed labeled 'cnv' nodes.
 10. Configures OAUTH for htpasswd and LDAP (Red Hat IdM) using the Group-Sync Operator.

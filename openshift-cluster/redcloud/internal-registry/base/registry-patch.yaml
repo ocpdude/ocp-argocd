@@ -15,7 +15,7 @@ spec:
       spec:
         managementState: Managed
         defaultRoute: true
-        replicas: 3
+        replicas: 2
         storage:
           pvc:
             claim: image-registry-storage

@@ -39,6 +39,6 @@ spec:
             insecure: false
             ca:
               name: oauth-ldap-ca-config-map
-            url: "ldaps://idm.redcloud.land:636/cn=users,cn=accounts,dc=redcloud,dc=land?uid"
+            url: "ldaps://ldap.redcloud.land:636/cn=users,cn=accounts,dc=redcloud,dc=land?uid"
     patchType: application/merge-patch+json
     id: oauth-patch

@@ -37,5 +37,5 @@ spec:
             baseDN: "cn=users,cn=accounts,dc=redcloud,dc=land"
             derefAliases: never
             scope: sub
-        url: "ldaps://idm.redcloud.land:636"
+        url: "ldaps://ldap.redcloud.land:636"
         
